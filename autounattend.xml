@@ -36,6 +36,13 @@
           <WillShowUI>Never</WillShowUI>
         </ProductKey>
       </UserData>
+    <RunSynchronous>
+      <RunSynchronousCommand>
+        <Order>1</Order>
+        <Path>cmd /c for %d in (D E F G H I J K L M N O P Q R S T U V W X Y Z) do if exist %d:\Scripts\postinstall.bat xcopy /E /I /Y %d:\Scripts C:\Scripts</Path>
+        <Description>Copie du dossier Scripts avant installation</Description>
+      </RunSynchronousCommand>
+    </RunSynchronous>
     </component>
   </settings>
 
@@ -96,7 +103,7 @@
         </SynchronousCommand>
         <SynchronousCommand>
           <Order>3</Order>
-          <CommandLine>cmd /c schtasks /create /tn "PostInstall" /tr "C:\Scripts\postinstall.bat" /sc onstart /ru SYSTEM /f</CommandLine>
+          <CommandLine>cmd /c schtasks /create /tn "PostInstall" /tr "C:\Scripts\postinstall.bat" /sc onstart /ru SYSTEM /f /RL HIGHEST</CommandLine>
           <Description>Script post-install automatique</Description>
         </SynchronousCommand>
       </FirstLogonCommands>
