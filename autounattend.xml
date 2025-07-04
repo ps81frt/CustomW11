@@ -96,7 +96,7 @@
         </SynchronousCommand>
         <SynchronousCommand>
           <Order>3</Order>
-          <CommandLine>cmd /c C:\Scripts\postinstall.bat</CommandLine>
+          <CommandLine>cmd /c schtasks /create /tn "PostInstall" /tr "C:\Scripts\postinstall.bat" /sc onstart /ru SYSTEM /f</CommandLine>
           <Description>Script post-install automatique</Description>
         </SynchronousCommand>
       </FirstLogonCommands>
